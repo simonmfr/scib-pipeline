@@ -2,7 +2,7 @@
 # coding: utf-8
 
 import scanpy as sc
-import scIB
+import scib
 import argparse
 import os
 import sys
@@ -61,11 +61,11 @@ if __name__=='__main__':
 
     print('Preparing dataset...')
     if result == 'embed':
-        scIB.pp.reduce_data(adata, n_top_genes=None, neighbors=True,
+        scib.pp.reduce_data(adata, n_top_genes=None, neighbors=True,
                             use_rep='X_emb', pca=False, umap=False)
     elif result == 'full':
         sc.pp.filter_genes(adata, min_cells=1)
-        scIB.pp.reduce_data(adata, n_top_genes=2000, neighbors=True,
+        scib.pp.reduce_data(adata, n_top_genes=2000, neighbors=True,
                             use_rep='X_pca', pca=True, umap=False)
 
     # Calculate embedding
