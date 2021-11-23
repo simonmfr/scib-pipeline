@@ -2,7 +2,7 @@
 # coding: utf-8
 
 import scanpy as sc
-import scIB
+import scib
 import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
@@ -231,7 +231,7 @@ if __name__=='__main__':
         print(f'    LISI:\t{lisi_graph_}')
         print(f'    Trajectory:\t{trajectory_}')
         
-    results = scIB.me.metrics(adata, adata_int, verbose=verbose,
+    results = scib.me.metrics(adata, adata_int, verbose=verbose,
                               hvg_score_=hvg_score_, cluster_nmi=cluster_nmi,
                               batch_key=batch_key, label_key=label_key,
                               silhouette_=silhouette_, embed=embed,
