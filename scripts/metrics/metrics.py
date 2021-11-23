@@ -156,7 +156,7 @@ if __name__=='__main__':
         print(f'    precompute PCA:\t{precompute_pca}')
 
     if not empty_file:
-        scIB.preprocessing.reduce_data(adata_int,
+        scib.preprocessing.reduce_data(adata_int,
                                        n_top_genes=n_hvgs,
                                        neighbors=recompute_neighbors, use_rep=embed,
                                        pca=precompute_pca, umap=False)
