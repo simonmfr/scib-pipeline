@@ -2,7 +2,7 @@
 # coding: utf-8
 
 import scanpy as sc
-import scIB
+import scib
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -15,9 +15,9 @@ def runPost(inPath, outPath, conos):
         conos: set if input is conos obect
     """
     if conos:
-        adata = scIB.pp.readConos(inPath)
+        adata = scib.pp.readConos(inPath)
     else:
-        adata = scIB.pp.readSeurat(inPath)
+        adata = scib.pp.readSeurat(inPath)
 
     adata.write(outPath)
 
