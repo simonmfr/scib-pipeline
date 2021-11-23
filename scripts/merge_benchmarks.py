@@ -11,7 +11,7 @@ if __name__=='__main__':
 
     parser.add_argument('-o', '--output', required=True, help='output file')
     parser.add_argument('-r', '--root', required=True,
-                        help='root directory for scIB output')
+                        help='root directory for scib output')
     args = parser.parse_args()
 
 
