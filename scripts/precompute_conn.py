@@ -3,7 +3,7 @@
 
 import scanpy as sc
 import scipy.io as scio
-from scIB.metrics import diffusion_conn 
+from scib.metrics import diffusion_conn 
 import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
