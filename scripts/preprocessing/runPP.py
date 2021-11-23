@@ -2,7 +2,7 @@
 # coding: utf-8
 
 import scanpy as sc
-import scIB
+import scib
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -28,19 +28,19 @@ def runPP(inPath, outPath, hvg, batch, rout, scale, seurat):
     if hvg > 500:
         print("Computing HVGs ...")
         if seurat:
-            hvgs= scIB.preprocessing.hvg_batch(adata,batch_key=batch, target_genes=hvg, adataOut=False)
+            hvgs= scib.preprocessing.hvg_batch(adata,batch_key=batch, target_genes=hvg, adataOut=False)
         else:
-            adata = scIB.preprocessing.hvg_batch(adata,
+            adata = scib.preprocessing.hvg_batch(adata,
                                                 batch_key=batch,
                                                 target_genes=hvg,
                                                 adataOut=True)
     if scale:
         print("Scaling data ...")
-        adata = scIB.preprocessing.scale_batch(adata, batch)
+        adata = scib.preprocessing.scale_batch(adata, batch)
         
     if rout:
         print("Save as RDS")
-        scIB.preprocessing.saveSeurat(adata, outPath, batch, hvgs)
+        scib.preprocessing.saveSeurat(adata, outPath, batch, hvgs)
         
     else:
         print("Save as HDF5")
