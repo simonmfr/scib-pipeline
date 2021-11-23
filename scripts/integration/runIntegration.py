@@ -2,7 +2,7 @@
 # coding: utf-8
 
 import scanpy as sc
-import scIB
+import scib
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -19,9 +19,9 @@ def runIntegration(inPath, outPath, method, hvg, batch, celltype=None):
     
     if timing:
         if celltype is not None:
-            integrated_tmp = scIB.metrics.measureTM(method, adata, batch, celltype)
+            integrated_tmp = scib.metrics.measureTM(method, adata, batch, celltype)
         else:
-            integrated_tmp = scIB.metrics.measureTM(method, adata, batch)            
+            integrated_tmp = scib.metrics.measureTM(method, adata, batch)            
 
         integrated = integrated_tmp[2][0]
 
@@ -59,17 +59,17 @@ if __name__=='__main__':
     celltype = args.celltype
     method = args.method
     methods = {
-        'scanorama': scIB.integration.runScanorama,
-        'trvae': scIB.integration.runTrVae,
-        'trvaep': scIB.integration.runTrVaep,
-        'scgen': scIB.integration.runScGen,
-        'mnn': scIB.integration.runMNN,
-        'bbknn': scIB.integration.runBBKNN,
-        'scvi': scIB.integration.runScvi,
-        'scanvi': scIB.integration.runScanvi,
-        'combat': scIB.integration.runCombat,
-        'saucie': scIB.integration.runSaucie,
-        'desc': scIB.integration.runDESC
+        'scanorama': scib.integration.runScanorama,
+        'trvae': scib.integration.runTrVae,
+        'trvaep': scib.integration.runTrVaep,
+        'scgen': scib.integration.runScGen,
+        'mnn': scib.integration.runMNN,
+        'bbknn': scib.integration.runBBKNN,
+        'scvi': scib.integration.runScvi,
+        'scanvi': scib.integration.runScanvi,
+        'combat': scib.integration.runCombat,
+        'saucie': scib.integration.runSaucie,
+        'desc': scib.integration.runDESC
     }
     
     if method not in methods.keys():
