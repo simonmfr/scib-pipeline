@@ -28,7 +28,7 @@ dependencies:
   - numba<=0.46  # for mnnpy
   - anndata2ri==1.0.5  # 1.0.6 has issues with HDF5 conversion
   - pip:
-    - git+git://github.com/theislab/scib.git
+    - git+git://github.com/theislab/scib.git # does not work for some reason. Installed pip dependencies manually.
     - trvaep==0.1.0
     - mnnpy==0.1.9.5
     - scgen==1.1.5
