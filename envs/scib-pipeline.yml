@@ -13,7 +13,7 @@ dependencies:
   - gsl
   - openblas
   - llvmlite
-  - libgcc-ng
+#  - libgcc-ng # not available for macOS
   - r-base
   - r-essentials
   - r-devtools
