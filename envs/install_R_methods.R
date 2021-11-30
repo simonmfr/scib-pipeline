@@ -11,7 +11,7 @@ installed <- as.data.table(installed.packages())
 packages <- data.table(
   package = c('RcppAnnoy', 'Seurat', 'welch-lab/liger', 'kharchenkolab/conos',
               'kharchenkolab/conosPanel', 'immunogenomics/harmony'),
-  version = c('0.0.14', '3.1.1', '0.5.0', '1.3.0', NA, NA),
+  version = c('0.0.14', '3.2.0', '0.5.0', '1.3.0', NA, NA),
   how = c('version', 'version', 'github', 'github', 'github')
 )
 # 'batchelor', NA, 'BioC'
