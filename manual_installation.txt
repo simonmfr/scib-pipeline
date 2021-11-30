@@ -1,0 +1,23 @@
+# installing scab-pipeline
+# see https://github.com/simonmfr/scib-pipeline
+
+# some require manual installation:
+ # conos
+	# todo, see GitHub issue 
+
+# liger
+	# in scib-R
+	cd /Volumes/bioinformatics1/conda/downloads/liger
+	curl -LJO https://github.com/welch-lab/liger/archive/refs/tags/v0.5.0.tar.gz
+	R CMD INSTALL liger-0.5.0.tar.gz —no-lock
+	R
+	packageVersion("liger")
+	# did not work via devtools, as devtools installation failed (depends on gert, which depends on libgit2)
+
+# Rcpp_annoy/v0.0.14
+	cd /Volumes/bioinformatics1/conda/downloads/Rcpp:0.0.14
+	curl -LJO https://cran.r-project.org/src/contrib/Archive/RcppAnnoy/RcppAnnoy_0.0.14.tar.gz
+	R CMD INSTALL RcppAnnoy_0.0.14.tar.gz --no-lock
+	R
+	library(RcppAnnoy)
+	sessionInfo()
