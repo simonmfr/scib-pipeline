@@ -1,8 +1,8 @@
-# installing scab-pipeline
+# installing scib-pipeline
 # see https://github.com/simonmfr/scib-pipeline
 
 # some require manual installation:
- # conos
+# conos
 	# todo, see GitHub issue 
 
 # liger
