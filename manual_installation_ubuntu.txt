@@ -1,0 +1,40 @@
+# see https://github.com/simonmfr/scib-pipeline
+
+# manually install R packages
+
+# seurat 
+	# Seurat 3.2.0 requires an older version of spatstat which has to be installed via
+	install.packages('https://cran.r-project.org/src/contrib/Archive/spatstat/spatstat_1.64-1.tar.gz', repos=NULL, type="source", INSTALL_opts = "--no-lock")
+	packageVersion("spatstat")
+	# now don't run install_R_methods.R as this will automatically update spatstat before installing Seurat
+	# manual package installation:
+	install.packages('https://cran.r-project.org/src/contrib/Archive/Seurat/Seurat_3.2.0.tar.gz', repos=NULL, type="source", INSTALL_opts = "--no-lock")
+	install.packages('https://cran.r-project.org/src/contrib/Archive/RcppAnnoy/RcppAnnoy_0.0.14.tar.gz', repos=NULL, type="source", INSTALL_opts = "--no-lock")
+	# done
+
+# liger
+	cd /home/simon/scib-pipeline
+	# R CMD INSTALL liger-0.5.0.tar.gz --no-lock
+	# ERROR: dependencies ‘riverplot’, ‘doSNOW’, ‘mclust’, ‘psych’ are not available for package ‘liger’
+	R
+	install.packages(c("doSNOW", "mclust", "psych"), dependencies=T, INSTALL_opts = '--no-lock')
+	install.packages(c("doSNOW", "mclust", "psych"))
+	R CMD INSTALL liger-0.5.0.tar.gz --no-lock
+	# done
+
+# conos - does not work
+	# R CMD INSTALL conos-1.3.0.tar.gz --no-lock
+	# ERROR: dependencies ‘dendextend’, ‘entropy’, ‘Matrix.utils’, ‘sccore’ are not available for package ‘conos’
+	install.packages(c("dendextend", "entropy", "Matrix.utils", "sccore"), dependencies=T, INSTALL_opts = '--no-lock')
+
+	R CMD INSTALL conos-1.3.0.tar.gz --no-lock
+	# ERROR when installing either 1.3.0 or 1.3.1 from tar.gz
+		make[1]: *** [Makefile:10: ../libn2.a] Error 127
+		make[1]: Leaving directory '/tmp/RtmphPVRfN/R.INSTALL2c4e6f8385b/conos-1.3.1/src/n2'
+		make: *** [Makevars:25: sublibraries] Error 1
+		ERROR: compilation failed for package ‘conos’
+		* removing ‘/home/simon/anaconda3/envs/scib-R/lib/R/library/conos’
+	# ERROR when installing current version via CRAN: N2R and pagoda2 missing, which can't be installed in scib-R environment
+	
+	install_github("kharchenkolab/conos@v1.3.1", ref='main') does not work either
+
