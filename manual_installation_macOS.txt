@@ -4,7 +4,7 @@
 # some require manual installation:
 # conos
 	# see GitHub issue 
-	# /tick
+	# done
 	
 # liger
 	# in scib-R
@@ -13,7 +13,7 @@
 	R CMD INSTALL liger-0.5.0.tar.gz —no-lock
 	R
 	packageVersion("liger")
-	# /tick
+	# done
 	# Note: did not work via devtools, as devtools installation failed (depends on gert, which depends on libgit2)
 
 # Rcpp_annoy/v0.0.14
@@ -23,4 +23,4 @@
 	R
 	library(RcppAnnoy)
 	sessionInfo()
-	# /tick
+	# done
