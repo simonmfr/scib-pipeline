@@ -3,8 +3,9 @@
 
 # some require manual installation:
 # conos
-	# todo, see GitHub issue 
-
+	# see GitHub issue 
+	# /tick
+	
 # liger
 	# in scib-R
 	cd /Volumes/bioinformatics1/conda/downloads/liger
@@ -12,7 +13,8 @@
 	R CMD INSTALL liger-0.5.0.tar.gz —no-lock
 	R
 	packageVersion("liger")
-	# did not work via devtools, as devtools installation failed (depends on gert, which depends on libgit2)
+	# /tick
+	# Note: did not work via devtools, as devtools installation failed (depends on gert, which depends on libgit2)
 
 # Rcpp_annoy/v0.0.14
 	cd /Volumes/bioinformatics1/conda/downloads/Rcpp:0.0.14
@@ -21,3 +23,4 @@
 	R
 	library(RcppAnnoy)
 	sessionInfo()
+	# /tick
